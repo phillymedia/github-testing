@@ -5,8 +5,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
     var $header = $('#header');
-    var $subscribe = $("subscribetoday__wrap").height();
-    var hhight = $header.height() - $subscribe;
+    var hhight = $header.height();
     var $content = $(".content");
     var cpadding = $content.css("padding-top");
     $('.content').css("margin-top", "-" + cpadding);
@@ -14,8 +13,7 @@ $(document).ready(function() {
 
     $(window).resize(function() {
         var $header = $('header');
-        var $subscribe = $("subscribetoday__wrap").height();
-        var hhight = $header.height() - $subscribe;
+        var hhight = $header.height();
         var $content = $(".content");
         var cpadding = $content.css("padding-top");
         $('.content').css("margin-top", "-" + cpadding);

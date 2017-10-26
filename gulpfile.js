@@ -19,8 +19,6 @@ plugins.sass = require('gulp-sass');
 plugins.nunjucksRender = require('gulp-nunjucks-render');
 plugins.gutil = require('gulp-util');
 plugins.removeCode = require('gulp-remove-code');
-plugins.inline = require('gulp-inline');
-
 
 gulp.task('browserify', function() {
     return browserify({
@@ -52,10 +50,6 @@ gulp.task('browserifyBuild', function() {
         .bundle()
         .pipe(source('main.js'))
         .pipe(buffer())
-        .pipe(uglify({
-    mangle: false,
-    compress: false
-}).on('error', plugins.gutil.log))
         .pipe(gulp.dest('.tmp/js'))
 });
 
@@ -72,7 +66,6 @@ gulp.task('nunjucks-build', getTask('nunjucks-build'));
 gulp.task('useref', getTask('useref'));
 gulp.task('indexcleanup', getTask('indexcleanup'));
 gulp.task('sass-build', getTask('sass-build'));
-gulp.task('inline', getTask('inline'));
 
 
 
@@ -90,7 +83,7 @@ gulp.task('default', function (callback) {
 
 gulp.task('build', function (callback) {
   plugins.runSequence('clean:dist', 'browserifyBuild',
-    ['sass-build','nunjucks-build'],'useref','inline', 'indexcleanup',
+    ['sass-build','nunjucks-build'],'useref','indexcleanup',
     callback
   )
 })

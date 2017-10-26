@@ -420,23 +420,3 @@ p {
 .containerCarouselCaption {
     bottom: -70px !important;
 }
-
-.dropcap::first-letter {
-    // font-stretch: normal;
-    // font-style: normal;
-    // font-weight: normal;
-    // float: left;
-    // font-size: 90px;
-    // line-height: 1;
-    // margin: 7px 20px 10px 0;
-    // padding: 15px 30px;
-    // text-transform: capitalize;
-    font-family: $philly-serif;
-    font-style: normal;
-    line-height: 1;
-    font-size: 4em;
-    color: #3b3b3b;
-    display: block;
-    float: left;
-    margin: 0 0.3em -0.2em 0;
-}
